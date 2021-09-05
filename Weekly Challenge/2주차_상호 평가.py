@@ -13,6 +13,7 @@ def solution(scores):
             n -=1
             su +=1
         mean = su/n
+        
         print(mean)
         if mean >= 90:
             answer += 'A'
