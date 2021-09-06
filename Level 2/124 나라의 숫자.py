@@ -18,3 +18,5 @@ def solution(n):
         tmp //= 3
         answer+=word[ite]
     return answer
+
+#3진수로 푸는방법도 있는데 고려하지 못했다
