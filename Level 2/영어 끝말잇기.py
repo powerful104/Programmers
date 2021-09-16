@@ -9,7 +9,7 @@ def solution(n, words):
             num+=1
         else:
             break
-    if num == len(words):
+    else:
         return [0,0]
     return [num % n+1, num // n+1]
 
