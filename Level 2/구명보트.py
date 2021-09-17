@@ -6,9 +6,7 @@ def solution(people, limit):
     while cur2 - cur1 > 0:
         if people[cur1] + people[cur2] <= limit:
             cur1 += 1
-            cur2 -= 1
-        else:
-            cur2 -= 1
+        cur2 -= 1
         answer += 1
     return answer + cur2 - cur1 + 1
 
