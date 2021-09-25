@@ -1,9 +1,5 @@
 def solution(board):
-    answer = 0
-    board.insert(0, [0]*len(board[0]))
-    for i in range(len(board)):
-        board[i].insert(0, 0)
-    
+    answer = board[0][0]
     for i in range(1,len(board)):
         for j in range(1,len(board[i])):
             if board[i][j] == 1:
@@ -20,4 +16,6 @@ DP로 풀면 좋겠다고 생각이 들었다
 만들어질수 있는 정사각형 크기를 아는 방법은 위에서 아래로 왼쪽에서 오른쪽으로 가면서
 오른쪽아래 블럭이 해당블럭인 가장 큰 정사각형의 크기를 구하면 된다.
 따라서 map의 위와 왼쪽을 확장한 후에 board[i][j]가 1이라면 왼쪽, 위, 왼쪽위 대각선의 블록중 최솟값에 1을 더한값을 board에 넣었다.
+
++ 맵의 크기를 늘리는 코드를 수정하여 더 간단히 만들었다.
 """
