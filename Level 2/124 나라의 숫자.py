@@ -10,6 +10,7 @@ def solution(n):
 
     answer = ''
     tmp = 3**(length-1)
+    
     for i in range(length):
         ite = 0
         while(tmp < n):
