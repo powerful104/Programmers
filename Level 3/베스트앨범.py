@@ -1,6 +1,7 @@
 def solution(genres, plays):
     dic={}
     answer = []
+    
     for i in range(len(genres)):
         if genres[i] in dic:
             dic[genres[i]] += plays[i]
@@ -8,6 +9,7 @@ def solution(genres, plays):
             dic[genres[i]] = plays[i]
     sor = sorted(dic.items(), key = lambda x: -x[1])
     sorGP = sorted(zip(genres,plays,range(len(genres))),key = lambda x: -x[1])
+
     for i in sor:
         check = 0
         cur = 0
