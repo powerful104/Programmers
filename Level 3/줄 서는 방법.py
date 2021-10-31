@@ -1,14 +1,17 @@
 import math
+
 def solution(n, k):
     answer = []
     li = [i + 1 for i in range(n)]
     idx= k-1
+
     for i in range(n,1,-1):
         fact = math.factorial(i-1)
         answer.append(li[idx//fact])
         del li[idx//fact]
         idx = idx % fact
     answer.append(li[0])
+
     return answer
 
 """
