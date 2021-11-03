@@ -6,6 +6,7 @@ def solution(n):
     curY = -1
     dirs = 0 
     num = 1
+    
     for i in range(n, 0,-1):
         for j in range(i):
             curX += state[dirs][0]
