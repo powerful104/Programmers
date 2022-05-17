@@ -1,14 +1,11 @@
-from numpy import Inf
-
-
 def solution(line):
     
     meet = []
-    maxX = -Inf
-    maxY = -Inf
+    maxX = -float('inf')
+    maxY = -float('inf')
     
-    minX = Inf
-    minY = Inf
+    minX = float('inf')
+    minY = float('inf')
     
     for i in range(len(line)):
         for j in range(i + 1, len(line)):
@@ -47,25 +44,27 @@ def solution(line):
     transX = -minX
     transY = -minY
     
-    width = maxX - minX
-    height = maxY - minY
+    width = maxX - minX + 1
+    height = maxY - minY + 1
     
     for i in meet:
         i[0] += transX
         i[1] += transY
-    print(meet)
     
-    answer = [['.' for _ in range(width)] for _ in range(height)]
-    
-    print(answer)
+    tempAns = [['.' for _ in range(width)] for _ in range(height)]
     
     for i in meet:
-        answer[i[0]][i[1]] = '*'
+        tempAns[i[1]][i[0]] = '*'
     
-    for i in answer:
-        i = "".join(i)
-    print(answer)
+    answer = []
+    
+    for i in tempAns:
+        answer.append(''.join(i))
+    answer.reverse()
     
     return answer
 
-solution([[2, -1, 4], [-2, -1, 4], [0, -1, 1], [5, -8, -12], [5, 8, 12]])
+    """
+    너무 더럽게 푼 느낌이 있다.
+    수정이 필요해 보인다.
+    """
